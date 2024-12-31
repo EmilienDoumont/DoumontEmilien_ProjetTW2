@@ -1,4 +1,4 @@
-const Product = require('../src/models/product');
+import { Product } from '../src/models/product';
 
 describe('Product', () => {
   test('should create a Product instance from JSON', () => {

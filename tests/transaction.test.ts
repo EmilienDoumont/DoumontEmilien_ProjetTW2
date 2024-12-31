@@ -1,4 +1,4 @@
-const Transaction = require('../src/models/transaction');
+import { Transaction } from '../src/models/transaction';
 
 describe('Transaction', () => {
   test('should create a Transaction instance from JSON', () => {
