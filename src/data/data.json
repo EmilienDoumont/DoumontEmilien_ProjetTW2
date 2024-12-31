@@ -1,75 +1,269 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Alice Dupont",
-        "role": "buyer",
-        "email": "alice.dupont@example.com",
-        "password": "hashed_password_123"
-      },
-      {
-        "id": 2,
-        "name": "Jean Martin",
-        "role": "seller",
-        "email": "jean.martin@example.com",
-        "password": "hashed_password_456"
-      }
-    ],
-    "products": [
-      {
-        "id": 1,
-        "domaine": "Château Margaux",
-        "cuvee": "Grand Vin",
-        "millesime": 2015,
-        "type": "rouge",
-        "vignoble": "Bordeaux",
-        "appellation": "Margaux AOC",
-        "classification": "Premier Cru Classé",
-        "price": 1200,
-        "stock": 10
-      },
-      {
-        "id": 2,
-        "domaine": "Domaine de la Romanée-Conti",
-        "cuvee": "La Tâche",
-        "millesime": 2018,
-        "type": "rouge",
-        "vignoble": "Bourgogne",
-        "appellation": "Romanée-Conti AOC",
-        "classification": "Grand Cru",
-        "price": 20000,
-        "stock": 5
-      },
-      {
-        "id": 3,
-        "domaine": "Domaine Zind-Humbrecht",
-        "cuvee": "Clos Windsbuhl",
-        "millesime": 2019,
-        "type": "blanc",
-        "vignoble": "Alsace",
-        "appellation": "Alsace Grand Cru",
-        "classification": "Vendanges Tardives",
-        "price": 90,
-        "stock": 20
-      }
-    ],
-    "transactions": [
-      {
-        "id": 1,
-        "buyer_id": 1,
-        "product_id": 1,
-        "quantity": 2,
-        "total_price": 2400,
-        "date": "2024-12-01T14:30:00Z"
-      },
-      {
-        "id": 2,
-        "buyer_id": 1,
-        "product_id": 3,
-        "quantity": 1,
-        "total_price": 90,
-        "date": "2024-12-02T10:00:00Z"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Dupont",
+      "role": "buyer",
+      "email": "alice.dupont@example.com",
+      "password": "hashed_password_123"
+    },
+    {
+      "id": 2,
+      "name": "Jean Martin",
+      "role": "seller",
+      "email": "jean.martin@example.com",
+      "password": "hashed_password_456"
+    },
+    {
+      "id": 3,
+      "name": "Nicolas Haas",
+      "role": "buyer",
+      "email": "nicolas.haas@example.com",
+      "password": "hashed_password_789"
+    },
+    {
+      "id": 4,
+      "name": "James Suckling",
+      "role": "seller",
+      "email": "james.suckling@example.com",
+      "password": "hashed_password_357"
+    },
+    {
+      "id": 5,
+      "name": "Valentin Perret",
+      "role": "buyer",
+      "email": "valentin.perret@example.com",
+      "password": "hashed_password_579"
+    },
+    {
+      "id": 6,
+      "name": "Julie Cap",
+      "role": "buyer",
+      "email": "julie.cap@example.com",
+      "password": "hashed_password_791"
+    },{
+      "id": 7,
+      "name": "John Wish",
+      "role": "buyer",
+      "email": "john.wish@example.com",
+      "password": "hashed_password_791"
+    },
+    {
+      "id": 8,
+      "name": "Lila Mila",
+      "role": "buyer",
+      "email": "lila.mila@example.com",
+      "password": "hashed_password_913"
+    },
+    {
+      "id": 9,
+      "name": "Lucas Scholz",
+      "role": "buyer",
+      "email": "lucas.scholz@example.com",
+      "password": "hashed_password_135"
+    },
+    {
+      "id": 10,
+      "name": "Marc Syrah",
+      "role": "buyer",
+      "email": "marc.syrah@example.com",
+      "password": "hashed_password_246"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "domaine": "Château Margaux",
+      "cuvee": "Grand Vin",
+      "millesime": 2015,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Margaux AOC",
+      "classification": "Premier Cru Classé",
+      "price": 1200,
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "domaine": "Domaine de la Romanée-Conti",
+      "cuvee": "La Tâche",
+      "millesime": 2018,
+      "type": "rouge",
+      "vignoble": "Bourgogne",
+      "appellation": "Romanée-Conti AOC",
+      "classification": "Grand Cru",
+      "price": 20000,
+      "stock": 5
+    },
+    {
+      "id": 3,
+      "domaine": "Domaine Zind-Humbrecht",
+      "cuvee": "Clos Windsbuhl",
+      "millesime": 2019,
+      "type": "blanc",
+      "vignoble": "Alsace",
+      "appellation": "Alsace Grand Cru",
+      "classification": "Vendanges Tardives",
+      "price": 90,
+      "stock": 20
+    },
+    {
+      "id": 4,
+      "domaine": "Château Haut-Brion",
+      "cuvee": "Grand Vin",
+      "millesime": 2009,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Pessac-Leognan AOC",
+      "classification": "Premier Cru Classé",
+      "price": 5600,
+      "stock": 3
+    },
+    {
+      "id": 5,
+      "domaine": "Château Mouton-Rothschild",
+      "cuvee": "Grand Vin",
+      "millesime": 1969,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Pauillac AOC",
+      "classification": "Premier Cru Classé",
+      "price": 11500,
+      "stock": 1
+    },
+    {
+      "id": 6,
+      "domaine": "Château Lafite-Rothschild",
+      "cuvee": "Grand Vin",
+      "millesime": 1979,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Pauillac AOC",
+      "classification": "Premier Cru Classé",
+      "price": 7800,
+      "stock": 5
+    },
+    {
+      "id": 7,
+      "domaine": "Château Latour",
+      "cuvee": "Grand Vin",
+      "millesime": 2001,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Pauillac AOC",
+      "classification": "Premier Cru Classé",
+      "price": 2500,
+      "stock": 6
+    },
+    {
+      "id": 8,
+      "domaine": "Château Cheval Blanc",
+      "cuvee": "Le petit cheval",
+      "millesime": 2004,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Saint Emilion Gran Cru",
+      "classification": "PREMIERS GRANDS CRUS CLASSÉS A",
+      "price": 20300,
+      "stock": 1
+    },
+    {
+      "id": 9,
+      "domaine": "Château Ausone",
+      "cuvee": "Grand Vin",
+      "millesime": 2012,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Saint Emilion Gran Cru",
+      "classification": "PREMIERS GRANDS CRUS CLASSÉS A",
+      "price": 2560,
+      "stock": 8
+    },
+    {
+      "id": 10,
+      "domaine": "Château Angélus",
+      "cuvee": "Grand Vin",
+      "millesime": 2008,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Saint Emilion Gran Cru",
+      "classification": "PREMIERS GRANDS CRUS CLASSÉS A",
+      "price": 8700,
+      "stock": 4
+    },
+    {
+      "id": 11,
+      "domaine": "Château Pétrus",
+      "cuvee": "Grand Vin",
+      "millesime": 2003,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Pomerol AOC",
+      "classification": "Grand Cru",
+      "price": 5300,
+      "stock": 4
+    },
+    {
+      "id": 12,
+      "domaine": "Château l'Evengile",
+      "cuvee": "Grand Vin",
+      "millesime": 2005,
+      "type": "rouge",
+      "vignoble": "Bordeaux",
+      "appellation": "Pomerol AOC",
+      "classification": "Grand Cru",
+      "price": 450,
+      "stock": 12
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "buyer_id": 1,
+      "product_id": 1,
+      "quantity": 2,
+      "total_price": 2400,
+      "date": "2024-12-01T14:30:00Z"
+    },
+    {
+      "id": 2,
+      "buyer_id": 1,
+      "product_id": 3,
+      "quantity": 1,
+      "total_price": 90,
+      "date": "2024-12-02T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "buyer_id": 6,
+      "product_id": 12,
+      "quantity": 3,
+      "total_price": 1350,
+      "date": "2024-12-02T12:00:00Z"
+    },
+    {
+      "id": 4,
+      "buyer_id": 8,
+      "product_id": 4,
+      "quantity": 1,
+      "total_price": 5600,
+      "date": "2024-12-03T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "buyer_id": 7,
+      "product_id": 7,
+      "quantity": 4,
+      "total_price": 10000,
+      "date": "2024-12-42T10:11:00Z"
+    },
+    {
+      "id": 6,
+      "buyer_id": 9,
+      "product_id": 9,
+      "quantity": 1,
+      "total_price": 2560,
+      "date": "2024-12-04T10:18:00Z"
+    }
+  ]
+}
