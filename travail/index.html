@@ -3,19 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catalogue des Vins</title>
+  <title>Les grands vins de France</title>
   <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
   <header>
-    <h1>Catalogue des Grands Vins</h1>
+    <a href="index.html"><h1>Les grands vins de France</h1></a>
+    <button onclick="window.location.href='gestion.html'">Gestion</button>
   </header>
   <main>
-    <section id="product-list">
-      <h2>Produits</h2>
-      <div id="products"></div>
+    <section id="products">
+      <div id="product-list"></div>
     </section>
   </main>
-  <script src="../main.js" type="module"></script>
+  <script>
+    // Fonction pour charger le fichier JSON
+    async function loadData() {
+      const response = await fetch('../src/data/data.json'); 
+      const data = await response.json();
+      return data;
+    }
+
+    // Afficher les produits avec un bouton acheter
+    function displayProducts(products) {
+      const productList = document.getElementById('product-list');
+      products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('card');
+        productCard.innerHTML = `
+          <img src="bottle-placeholder.png" alt="Bouteille de vin">
+          <div>
+            <h3>${product.domaine} - ${product.cuvee} (${product.millesime})</h3>
+            <p>Type : ${product.type}</p>
+            <p>Région : ${product.vignoble}</p>
+            <p>Prix : ${product.price} €</p>
+          </div>
+          <button onclick="buyProduct(${product.id})">Acheter</button>
+        `;
+        productList.appendChild(productCard);
+      });
+    }
+
+    // Action sur le bouton Acheter
+    function buyProduct(productId) {
+      alert(`Produit avec ID ${productId} acheté!`);
+    }
+
+    // Charger et afficher les produits au chargement de la page
+    window.onload = async () => {
+      const data = await loadData();
+      displayProducts(data.products);
+    };
+  </script>
 </body>
 </html>

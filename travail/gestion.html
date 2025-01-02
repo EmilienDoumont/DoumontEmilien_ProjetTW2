@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Produits et Transactions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #6d071a;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header button {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    input[type="number"] {
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gestion des Produits et Transactions</h1>
+    <button onclick="window.location.href='index.html'">Retour</button>
+  </header>
+  <main>
+    <section id="transactions">
+      <h2>Dernières Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Acheteur</th>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-list">
+          <!-- Transactions chargées dynamiquement -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="users">
+      <h2>Utilisateurs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Rôle</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="user-list">
+          <!-- Utilisateurs chargés dynamiquement -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="products">
+      <h2>Produits</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Domaine</th>
+            <th>Cuvée</th>
+            <th>Millésime</th>
+            <th>Type</th>
+            <th>Prix</th>
+            <th>Stock</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+          <!-- Produits chargés dynamiquement -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    // Charger les données du fichier JSON
+    async function loadData() {
+      const response = await fetch('../src/data/data.json'); // Assurez-vous que le fichier data.json est au même niveau que ce fichier HTML
+      const data = await response.json();
+      return data;
+    }
+
+    // Afficher les transactions
+    function displayTransactions(transactions, users, products) {
+      const transactionList = document.getElementById('transaction-list');
+      transactions.forEach(transaction => {
+        const buyer = users.find(user => user.id === transaction.buyer_id);
+        const product = products.find(prod => prod.id === transaction.product_id);
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${transaction.id}</td>
+          <td>${buyer ? buyer.name : 'Inconnu'}</td>
+          <td>${product ? product.domaine + ' - ' + product.cuvee : 'Inconnu'}</td>
+          <td>${transaction.quantity}</td>
+          <td>${transaction.total_price} €</td>
+          <td>${new Date(transaction.date).toLocaleString()}</td>
+        `;
+        transactionList.appendChild(row);
+      });
+    }
+
+    // Afficher les utilisateurs
+    function displayUsers(users) {
+      const userList = document.getElementById('user-list');
+      users.forEach(user => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${user.id}</td>
+          <td>${user.name}</td>
+          <td>${user.role}</td>
+          <td>${user.email}</td>
+        `;
+        userList.appendChild(row);
+      });
+    }
+
+    // Afficher les produits avec possibilité de modifier le stock
+    function displayProducts(products) {
+      const productList = document.getElementById('product-list');
+      products.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${product.id}</td>
+          <td>${product.domaine}</td>
+          <td>${product.cuvee}</td>
+          <td>${product.millesime}</td>
+          <td>${product.type}</td>
+          <td>${product.price} €</td>
+          <td><input type="number" value="${product.stock}" min="0" id="stock-${product.id}"></td>
+          <td><button onclick="updateStock(${product.id})">Mettre à jour</button></td>
+        `;
+        productList.appendChild(row);
+      });
+    }
+
+    // Action pour mettre à jour le stock
+    function updateStock(productId) {
+      const newStock = document.getElementById(`stock-${productId}`).value;
+      alert(`Stock du produit avec ID ${productId} mis à jour à ${newStock}`);
+    }
+
+    // Charger et afficher les données au chargement de la page
+    window.onload = async () => {
+      const data = await loadData();
+      displayTransactions(data.transactions, data.users, data.products);
+      displayUsers(data.users);
+      displayProducts(data.products);
+    };
+  </script>
+</body>
+</html>

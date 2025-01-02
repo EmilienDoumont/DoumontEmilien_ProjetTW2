@@ -4,69 +4,69 @@
         "id": 1,
         "name": "Alice Dupont",
         "role": "buyer",
-        "email": "alice.dupont@example.com",
+        "email": "alice.dupont@icloud.com",
         "password": "hashed_password_123"
       },
       {
         "id": 2,
         "name": "Jean Martin",
         "role": "seller",
-        "email": "jean.martin@example.com",
+        "email": "jean.martin@gmail.com",
         "password": "hashed_password_456"
       },
       {
         "id": 3,
         "name": "Nicolas Haas",
         "role": "buyer",
-        "email": "nicolas.haas@example.com",
+        "email": "nicolas.haas@gmail.com",
         "password": "hashed_password_789"
       },
       {
         "id": 4,
         "name": "James Suckling",
         "role": "seller",
-        "email": "james.suckling@example.com",
+        "email": "james.suckling@gmail.com",
         "password": "hashed_password_357"
       },
       {
         "id": 5,
         "name": "Valentin Perret",
         "role": "buyer",
-        "email": "valentin.perret@example.com",
+        "email": "valentin.perret@yahoo.com",
         "password": "hashed_password_579"
       },
       {
         "id": 6,
         "name": "Julie Cap",
         "role": "buyer",
-        "email": "julie.cap@example.com",
+        "email": "julie.cap@outlook.com",
         "password": "hashed_password_791"
       },{
         "id": 7,
         "name": "John Wish",
         "role": "buyer",
-        "email": "john.wish@example.com",
+        "email": "john.wish@gmail.com",
         "password": "hashed_password_791"
       },
       {
         "id": 8,
         "name": "Lila Mila",
         "role": "buyer",
-        "email": "lila.mila@example.com",
+        "email": "lila.mila@icloud.com",
         "password": "hashed_password_913"
       },
       {
         "id": 9,
         "name": "Lucas Scholz",
         "role": "buyer",
-        "email": "lucas.scholz@example.com",
+        "email": "lucas.scholz@msn.com",
         "password": "hashed_password_135"
       },
       {
         "id": 10,
         "name": "Marc Syrah",
         "role": "buyer",
-        "email": "marc.syrah@example.com",
+        "email": "marc.syrah@syrah.com",
         "password": "hashed_password_246"
       }
     ],
@@ -223,7 +223,7 @@
         "product_id": 1,
         "quantity": 2,
         "total_price": 2400,
-        "date": "2024-12-01T14:30:00Z"
+        "date": "2024-12-01T14:30:28Z"
       },
       {
         "id": 2,
@@ -231,7 +231,7 @@
         "product_id": 3,
         "quantity": 1,
         "total_price": 90,
-        "date": "2024-12-02T10:00:00Z"
+        "date": "2024-12-02T10:07:16Z"
       },
       {
         "id": 3,
@@ -239,7 +239,7 @@
         "product_id": 12,
         "quantity": 3,
         "total_price": 1350,
-        "date": "2024-12-02T12:00:00Z"
+        "date": "2024-12-02T12:21:37Z"
       },
       {
         "id": 4,
@@ -247,7 +247,7 @@
         "product_id": 4,
         "quantity": 1,
         "total_price": 5600,
-        "date": "2024-12-03T10:00:00Z"
+        "date": "2024-12-03T16:28:11Z"
       },
       {
         "id": 5,
@@ -255,7 +255,7 @@
         "product_id": 7,
         "quantity": 4,
         "total_price": 10000,
-        "date": "2024-12-42T10:11:00Z"
+        "date": "2024-12-04T10:11:04Z"
       },
       {
         "id": 6,
@@ -263,7 +263,7 @@
         "product_id": 9,
         "quantity": 1,
         "total_price": 2560,
-        "date": "2024-12-04T10:18:00Z"
+        "date": "2024-12-04T10:18:45Z"
       }
     ]
   }
