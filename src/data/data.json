@@ -81,7 +81,8 @@
         "appellation": "Margaux AOC",
         "classification": "Premier Cru Classé",
         "price": 1200,
-        "stock": 10
+        "stock": 10,
+        "img": 1
       },
       {
         "id": 2,
@@ -93,7 +94,8 @@
         "appellation": "Romanée-Conti AOC",
         "classification": "Grand Cru",
         "price": 20000,
-        "stock": 5
+        "stock": 5,
+        "img": 2
       },
       {
         "id": 3,
@@ -105,7 +107,8 @@
         "appellation": "Alsace Grand Cru",
         "classification": "Vendanges Tardives",
         "price": 90,
-        "stock": 20
+        "stock": 20,
+        "img": 3
       },
       {
         "id": 4,
@@ -117,7 +120,8 @@
         "appellation": "Pessac-Leognan AOC",
         "classification": "Premier Cru Classé",
         "price": 5600,
-        "stock": 3
+        "stock": 3,
+        "img": 4
       },
       {
         "id": 5,
@@ -129,7 +133,8 @@
         "appellation": "Pauillac AOC",
         "classification": "Premier Cru Classé",
         "price": 11500,
-        "stock": 1
+        "stock": 1,
+        "img": 5
       },
       {
         "id": 6,
@@ -141,7 +146,8 @@
         "appellation": "Pauillac AOC",
         "classification": "Premier Cru Classé",
         "price": 7800,
-        "stock": 5
+        "stock": 5,
+        "img": 6
       },
       {
         "id": 7,
@@ -153,7 +159,8 @@
         "appellation": "Pauillac AOC",
         "classification": "Premier Cru Classé",
         "price": 2500,
-        "stock": 6
+        "stock": 6,
+        "img": 7
       },
       {
         "id": 8,
@@ -165,19 +172,21 @@
         "appellation": "Saint Emilion Gran Cru",
         "classification": "PREMIERS GRANDS CRUS CLASSÉS A",
         "price": 20300,
-        "stock": 1
+        "stock": 1,
+        "img": 8
       },
       {
         "id": 9,
         "domaine": "Château Ausone",
-        "cuvee": "Grand Vin",
+        "cuvee": "Chapelle",
         "millesime": 2012,
         "type": "rouge",
         "vignoble": "Bordeaux",
         "appellation": "Saint Emilion Gran Cru",
         "classification": "PREMIERS GRANDS CRUS CLASSÉS A",
         "price": 2560,
-        "stock": 8
+        "stock": 8,
+        "img": 9
       },
       {
         "id": 10,
@@ -189,7 +198,8 @@
         "appellation": "Saint Emilion Gran Cru",
         "classification": "PREMIERS GRANDS CRUS CLASSÉS A",
         "price": 8700,
-        "stock": 4
+        "stock": 4,
+        "img": 10
       },
       {
         "id": 11,
@@ -201,7 +211,8 @@
         "appellation": "Pomerol AOC",
         "classification": "Grand Cru",
         "price": 5300,
-        "stock": 4
+        "stock": 4,
+        "img": 11
       },
       {
         "id": 12,
@@ -213,7 +224,8 @@
         "appellation": "Pomerol AOC",
         "classification": "Grand Cru",
         "price": 450,
-        "stock": 12
+        "stock": 12,
+        "img": 12
       }
     ],
     "transactions": [

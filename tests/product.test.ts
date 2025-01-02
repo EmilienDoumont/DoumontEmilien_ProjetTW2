@@ -12,7 +12,8 @@ describe('Product', () => {
       appellation: 'Margaux AOC',
       classification: 'Premier Cru Classé',
       price: 1200,
-      stock: 10
+      stock: 10,
+      img: 1
     };
     const product = Product.fromJSON(json);
 

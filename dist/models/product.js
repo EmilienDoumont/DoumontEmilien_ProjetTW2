@@ -13,6 +13,7 @@ class Product {
         this.classification = classification;
         this.price = price;
         this.stock = stock;
+        this.img = img
     }
     static fromJSON(json) {
         return new Product(json.id, json.domaine, json.cuvee, json.millesime, json.type, json.vignoble, json.appellation, json.classification, json.price, json.stock);
