@@ -5,38 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les grands vins de France</title>
   <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/rht4bfa.css">
 </head>
 <body>
   <header>
-    <a href="index.html"><h1>Les grands vins de France</h1></a>
+    <h1>Les grands vins de France</h1>
     <button onclick="window.location.href='gestion.html'">Gestion</button>
   </header>
   <main>
+  <div id="parallax-background"></div>
     <section id="products">
       <div id="product-list"></div>
     </section>
   </main>
   <script>
-    // Fonction pour charger le fichier JSON
     async function loadData() {
       const response = await fetch('../src/data/data.json'); 
       const data = await response.json();
       return data;
     }
 
-    // Afficher les produits avec un bouton acheter
     function displayProducts(products) {
       const productList = document.getElementById('product-list');
       products.forEach(product => {
         const productCard = document.createElement('div');
         productCard.classList.add('card');
         productCard.innerHTML = `
-          <img src="../src/data/img/vin${product.img}.jpg" alt="Bouteille de vin">
+          <img src="../src/data/img/vin${product.img}.png" alt="Bouteille de vin">
           <div>
-            <h3>${product.domaine} - ${product.cuvee} (${product.millesime})</h3>
-            <p>Type : ${product.type}</p>
-            <p>Région : ${product.vignoble}</p>
-            <p>Prix : ${product.price} €</p>
+            <h3>${product.domaine} - ${product.cuvee} ${product.millesime}</h3>
+            <p>${product.cepage}</p>
+            <p>${product.vignoble}</p>
+            <p class="prix">${product.price} €</p>
           </div>
           <button onclick="buyProduct(${product.id})">Acheter</button>
         `;
@@ -44,12 +44,10 @@
       });
     }
 
-    // Action sur le bouton Acheter
     function buyProduct(productId) {
       alert(`Produit avec ID ${productId} acheté!`);
     }
 
-    // Charger et afficher les produits au chargement de la page
     window.onload = async () => {
       const data = await loadData();
       displayProducts(data.products);

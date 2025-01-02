@@ -8,6 +8,7 @@ describe('Product', () => {
       cuvee: 'Grand Vin',
       millesime: 2015,
       type: 'rouge',
+      cepage: '75% cabernet sauvignon, 20% merlot, 3% petit verdot, 2% cabernet franc',
       vignoble: 'Bordeaux',
       appellation: 'Margaux AOC',
       classification: 'Premier Cru Classé',

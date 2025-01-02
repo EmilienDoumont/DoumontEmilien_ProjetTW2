@@ -8,6 +8,7 @@ class Product {
         this.cuvee = cuvee;
         this.millesime = millesime;
         this.type = type;
+        this.cepage = cepage;
         this.vignoble = vignoble;
         this.appellation = appellation;
         this.classification = classification;

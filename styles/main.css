@@ -1,5 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "the-seasons", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   padding: 0;
 }
@@ -9,39 +11,78 @@ a {
 }
 
 header {
-  background-color: #6d071a;
+
   color: white;
   padding: 15px;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content : space-between;
+  z-index: 1;
+}
+h1 {
+  color: black;
 }
 main {
-  padding: 20px;
+  background-color: #f9f8f4;
+}
+#parallax-background {
+  position: relative;
+  height: 100vh; /* Toute la hauteur de la fenêtre */
+  background-image: url('../src/data/img/background.jpg'); /* Ton image ici */
+  background-size: 110%; /* Taille initiale légèrement agrandie */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 0.1s ease-out; /* Zoom fluide */
+  z-index: 0; /* Place le fond derrière le contenu */
 }
 section {
   margin-bottom: 20px;
 }
 .card {
-  border: 1px solid #ddd;
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .card img {
-  height: 100px;
+  height: 200px;
   margin-right: 20px;
 }
 .card button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+  border: solid;
+  border-width: 1px;
+  border-color: #b4a379;
+  background: none;
+  color: #b4a379;
   padding: 10px 20px;
-  border-radius: 5px;
   cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #b4a379;
+  color: white;
+  transition: 300ms;
+}
+
+.prix {
+  font-weight: 700;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f8f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b4a379;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b4a379;
 }
