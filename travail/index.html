@@ -8,16 +8,24 @@
   <link rel="stylesheet" href="https://use.typekit.net/rht4bfa.css">
 </head>
 <body>
+  <div id="parallax-background">
   <header>
-    <h1>Les grands vins de France</h1>
-    <button onclick="window.location.href='gestion.html'">Gestion</button>
+    <img id="logo" src="../src/data/img/logo.svg" alt="Logo grand vin de france">
+    <button id="buttonG" onclick="window.location.href='gestion.html'">Gestion</button>
   </header>
   <main>
-  <div id="parallax-background"></div>
+  
+    <h1>Découvrez les plus belles cuvées de France</h1>
+    <img id="sliderB" src="../src/data/img/slide.svg" alt="notre boutique slider">
+  </div>
     <section id="products">
+      <h2>La sélection du moment</h2>
       <div id="product-list"></div>
     </section>
   </main>
+  <footer>
+    <p>© Copyright 2025, Projet Techno Web II - HEH - Emilien Doumont</p>
+  </footer>
   <script>
     async function loadData() {
       const response = await fetch('../src/data/data.json'); 
@@ -34,11 +42,20 @@
           <img src="../src/data/img/vin${product.img}.png" alt="Bouteille de vin">
           <div>
             <h3>${product.domaine} - ${product.cuvee} ${product.millesime}</h3>
-            <p>${product.cepage}</p>
-            <p>${product.vignoble}</p>
-            <p class="prix">${product.price} €</p>
+            <div class="cepage">
+              <img class="imgWine" src="../src/data/img/wine.svg" alt="icone grappe de raison">
+              <p>${product.cepage}</p>
+            </div>
+            <div class="region">
+              <img class="imgCup" src="../src/data/img/cup.svg" alt="icone cup">
+              <p>${product.vignoble}</p>
+            </div>
+            <div class="price">
+              <p class="prix">${product.price} €</p>
+              <button class="buttonPrice" onclick="buyProduct(${product.id})">Acheter</button>
+            </div>
+
           </div>
-          <button onclick="buyProduct(${product.id})">Acheter</button>
         `;
         productList.appendChild(productCard);
       });

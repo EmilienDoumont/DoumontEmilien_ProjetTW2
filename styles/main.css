@@ -4,48 +4,90 @@ body {
   font-style: normal;
   margin: 0;
   padding: 0;
+  background-color: #f9f8f4;
 }
 a {
   text-decoration: none;
   color: white;
 }
-
 header {
-
+  position: relative;
   color: white;
   padding: 15px;
   text-align: center;
   display: flex;
   flex-direction: row;
-  justify-content : space-between;
+  justify-content : flex-end;
   z-index: 1;
 }
+#logo {
+  max-width: 8%;
+  position: absolute;
+  left: 47%;
+}
+#buttonG {
+  color: #f9f8f4;
+  background-color: #b4a37900;
+  border: solid;
+  border-color: #f9f8f4;
+  padding: 10px;
+}
+#buttonG:hover {
+  color: white;
+  background-color: #b4a379;
+  transition: 300ms;
+  border-color: #b4a379;
+}
+
 h1 {
-  color: black;
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  line-height: 4rem;
+}
+#sliderB {
+  max-width: 9%;
+  position: absolute;
+  bottom: 0%;
+  left: 46%;
+}
+h2 {
+  color: #b4a379;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 2rem;
 }
 main {
   background-color: #f9f8f4;
 }
 #parallax-background {
   position: relative;
-  height: 100vh; /* Toute la hauteur de la fenêtre */
-  background-image: url('../src/data/img/background.jpg'); /* Ton image ici */
-  background-size: 110%; /* Taille initiale légèrement agrandie */
+  height: 100vh; 
+  background-image: url('../src/data/img/background.jpg'); 
   background-position: center;
   background-repeat: no-repeat;
-  transition: background-size 0.1s ease-out; /* Zoom fluide */
-  z-index: 0; /* Place le fond derrière le contenu */
+  z-index: 0;
+  text-align: center;
 }
 section {
   margin-bottom: 20px;
 }
+#product-list{
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 100px;
+}
 .card {
   border-radius: 5px;
   padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  max-width: 500px;
 }
 .card img {
   height: 200px;
@@ -67,8 +109,36 @@ section {
   transition: 300ms;
 }
 
+.region, .cepage, .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
+
+.imgCup, .imgWine {
+  max-height: 30px;
+  margin: 0;
+}
+
 .prix {
   font-weight: 700;
+}
+
+.buttonPrice {
+  margin-left: 10px;
+}
+
+footer {
+  background-color: #1b1b1b;
+}
+
+footer p {
+  font-family: arial;
+  text-align: center;
+  color: #f9f8f4;
+  padding: 20px;
+  margin: 0;
 }
 
 ::-webkit-scrollbar {

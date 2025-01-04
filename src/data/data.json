@@ -2,9 +2,9 @@
     "users": [
       {
         "id": 1,
-        "name": "Alice Dupont",
+        "name": "Olivia Marshall",
         "role": "buyer",
-        "email": "alice.dupont@icloud.com",
+        "email": "oli.marshall@icloud.com",
         "password": "hashed_password_123"
       },
       {
