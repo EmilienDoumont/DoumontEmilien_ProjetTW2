@@ -156,3 +156,12 @@ footer p {
 ::-webkit-scrollbar-thumb:hover {
   background: #b4a379;
 }
+
+@media only screen and (max-width: 1000px) {
+
+#logo, #sliderB {
+  max-width: 20%;
+  left: 40%;
+}
+
+}
