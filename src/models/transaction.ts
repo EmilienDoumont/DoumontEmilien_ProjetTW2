@@ -1,4 +1,4 @@
-export class Transaction {
+export  class Transaction {
     constructor(
       public id: number,
       public buyerId: number,

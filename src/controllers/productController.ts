@@ -1,21 +1,19 @@
-import Product from '../models/product';
+import { Product } from '../models/product';
 
 class ProductController {
-  constructor() {
-    this.products = [];
-  }
+  private products: Product[] = [];
 
-  async loadProducts() {
+  async loadProducts(): Promise<void> {
     const response = await fetch('/data/data.json');
     const data = await response.json();
-    this.products = data.products.map(product => Product.fromJSON(product));
+    this.products = data.products.map((product: any) => Product.fromJSON(product));
   }
 
-  getProducts() {
+  getProducts(): Product[] {
     return this.products;
   }
 
-  updateStock(productId, newStock) {
+  updateStock(productId: number, newStock: number): boolean {
     const product = this.products.find(p => p.id === productId);
     if (product) {
       product.stock = newStock;

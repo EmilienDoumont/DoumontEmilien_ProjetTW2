@@ -8,27 +8,29 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const user_1 = __importDefault(require("../models/user"));
-class UserController {
+const product_1 = require("../models/product");
+class ProductController {
     constructor() {
-        this.users = [];
+        this.products = [];
     }
-    loadUsers() {
+    loadProducts() {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield fetch('/data/data.json');
             const data = yield response.json();
-            this.users = data.users.map(user => user_1.default.fromJSON(user));
+            this.products = data.products.map((product) => product_1.Product.fromJSON(product));
         });
     }
-    getUsers() {
-        return this.users;
+    getProducts() {
+        return this.products;
     }
-    getUserById(userId) {
-        return this.users.find(user => user.id === userId);
+    updateStock(productId, newStock) {
+        const product = this.products.find(p => p.id === productId);
+        if (product) {
+            product.stock = newStock;
+            return true;
+        }
+        return false;
     }
 }
-exports.default = UserController;
+exports.default = ProductController;

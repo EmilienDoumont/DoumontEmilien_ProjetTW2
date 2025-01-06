@@ -16,7 +16,6 @@ Le projet comprend deux pages principales :
 ```
 project/
 ├── src/
-│   ├── index.ts
 │   ├── data/
 │   │   ├── data.json
 │   │   └── img/ 
@@ -24,7 +23,10 @@ project/
 │   │   ├── user.ts
 │   │   ├── product.ts
 │   │   └── transaction.ts
-│   └── main.ts
+│   ├── controllers/
+│   │   ├── userController.ts
+│   │   ├── productController.ts
+│   └── └── transactionController.ts
 ├── views/
 │   ├── index.html
 │   └── styles.css
@@ -36,8 +38,11 @@ project/
 │   ├── models/
 │   │   ├── user.js
 │   │   ├── product.js
-│   │   └── transaction.js       
-│   └── index.js  
+│   │   └── transaction.js  
+│   ├── controllers/
+│   │   ├── userController.js
+│   │   ├── productController.js
+│   └── └── transactionController.js    
 ├── node_modules/
 ├── tsconfig.json
 ├── jest.config.js
