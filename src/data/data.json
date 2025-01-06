@@ -238,6 +238,48 @@
         "price": 450,
         "stock": 12,
         "img": 12
+      },
+      {
+        "id": 13,
+        "domaine": "Château Pape Clément",
+        "cuvee": "Grand Vin",
+        "millesime": 2016,
+        "type": "rouge",
+        "cepage": "50% merlot, cabernet sauvignon 50%",
+        "vignoble": "Bordeaux",
+        "appellation": "Pessac-Leognan AOC",
+        "classification": "Cru classé des graves",
+        "price": 120,
+        "stock": 5,
+        "img": 13
+      },
+      {
+        "id": 14,
+        "domaine": "Château Pape Clément",
+        "cuvee": "L'âme du pape Clément",
+        "millesime": 2019,
+        "type": "rouge",
+        "cepage": "59% Merlot 33% Cab. Sauv. 7% Cab. Franc 1% Petit Verdot",
+        "vignoble": "Bordeaux",
+        "appellation": "Pessac-Leognan AOC",
+        "classification": "Cru classé des graves",
+        "price": 20,
+        "stock": 36,
+        "img": 14
+      },
+      {
+        "id": 15,
+        "domaine": "Château du Taillan",
+        "cuvee": "Grand Vin",
+        "millesime": 2016,
+        "type": "rouge",
+        "cepage": "70% merlot, cabernet sauvignon 20%, cabernet franc 10%",
+        "vignoble": "Bordeaux",
+        "appellation": "Haut-Médoc AOC",
+        "classification": "Cru bourgeois",
+        "price": 24,
+        "stock": 16,
+        "img": 15
       }
     ],
     "transactions": [
@@ -288,6 +330,38 @@
         "quantity": 1,
         "total_price": 2560,
         "date": "2024-12-04T10:18:45Z"
+      },
+      {
+        "id": 7,
+        "buyer_id": 10,
+        "product_id": 15,
+        "quantity": 6,
+        "total_price": 144,
+        "date": "2024-12-04T16:36:27Z"
+      },
+      {
+        "id": 8,
+        "buyer_id": 1,
+        "product_id": 13,
+        "quantity": 3,
+        "total_price": 360,
+        "date": "2024-12-05T11:45:29Z"
+      },
+      {
+        "id": 9,
+        "buyer_id": 6,
+        "product_id": 14,
+        "quantity": 12,
+        "total_price": 240,
+        "date": "2024-12-05T13:28:54Z"
+      },
+      {
+        "id": 10,
+        "buyer_id": 9,
+        "product_id": 11,
+        "quantity": 1,
+        "total_price": 5300,
+        "date": "2024-12-05T14:20:42Z"
       }
     ]
   }

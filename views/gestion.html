@@ -111,6 +111,7 @@
             <th>Domaine</th>
             <th>Cuvée</th>
             <th>Millésime</th>
+            <th>Appellation</th>
             <th>Type</th>
             <th>Prix</th>
             <th>Stock</th>
@@ -118,20 +119,17 @@
           </tr>
         </thead>
         <tbody id="product-list">
-          <!-- Produits chargés dynamiquement -->
         </tbody>
       </table>
     </section>
   </main>
   <script>
-    // Charger les données du fichier JSON
     async function loadData() {
-      const response = await fetch('../src/data/data.json'); // Assurez-vous que le fichier data.json est au même niveau que ce fichier HTML
+      const response = await fetch('../src/data/data.json'); 
       const data = await response.json();
       return data;
     }
 
-    // Afficher les transactions
     function displayTransactions(transactions, users, products) {
       const transactionList = document.getElementById('transaction-list');
       transactions.forEach(transaction => {
@@ -150,7 +148,6 @@
       });
     }
 
-    // Afficher les utilisateurs
     function displayUsers(users) {
       const userList = document.getElementById('user-list');
       users.forEach(user => {
@@ -165,7 +162,6 @@
       });
     }
 
-    // Afficher les produits avec possibilité de modifier le stock
     function displayProducts(products) {
       const productList = document.getElementById('product-list');
       products.forEach(product => {
@@ -175,6 +171,7 @@
           <td>${product.domaine}</td>
           <td>${product.cuvee}</td>
           <td>${product.millesime}</td>
+          <td>${product.appellation}</td> 
           <td>${product.type}</td>
           <td>${product.price} €</td>
           <td><input type="number" value="${product.stock}" min="0" id="stock-${product.id}"></td>
@@ -184,13 +181,11 @@
       });
     }
 
-    // Action pour mettre à jour le stock
     function updateStock(productId) {
       const newStock = document.getElementById(`stock-${productId}`).value;
       alert(`Stock du produit avec ID ${productId} mis à jour à ${newStock}`);
     }
 
-    // Charger et afficher les données au chargement de la page
     window.onload = async () => {
       const data = await loadData();
       displayTransactions(data.transactions, data.users, data.products);
